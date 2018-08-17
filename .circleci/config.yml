@@ -18,6 +18,9 @@ jobs:
           - v1-dependencies-{{ checksum "build.gradle" }}
           - v1-dependencies-
 
+      - setup_remote_docker:
+          version: 17.05.0-ce
+
       - run: gradle dependencies
 
       - run: gradle clean build -xtest
