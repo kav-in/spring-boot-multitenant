@@ -33,7 +33,6 @@ jobs:
   push_to_gcp:
     docker:
       - image: google/cloud-sdk
-      - image: gradle:4.9
 
     steps:
       - checkout
@@ -41,7 +40,14 @@ jobs:
       - setup_remote_docker:
           version: 17.05.0-ce
 
-      - run: gradle buildDocker -xtest
+      - run: 
+          name: Install gradle
+          command: |
+            wget https://services.gradle.org/distributions/gradle-3.4.1-bin.zip
+            sudo mkdir /opt/gradle
+            sudo unzip -d /opt/gradle gradle-3.4.1-bin.zip
+            export PATH=$PATH:/opt/gradle/gradle-3.4.1/bin
+            gradle buildDocker -xtest
 
       - run: 
           name: Setup Google Cloud SDK
