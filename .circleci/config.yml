@@ -33,7 +33,7 @@ jobs:
   push_to_gcp:
     docker:
       - image: google/cloud-sdk
-      - image: gradle:alphine
+      - image: gradle:4.9
 
     steps:
       - checkout
