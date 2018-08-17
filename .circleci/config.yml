@@ -25,6 +25,8 @@ jobs:
 
       - run: gradle clean build -xtest
 
+      - run: gradle buildDocker -xtest
+
       - run: docker images
 
       - save_cache:
