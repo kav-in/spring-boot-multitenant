@@ -33,8 +33,7 @@ jobs:
   push_to_gcp:
     docker:
       - image: google/cloud-sdk
-      - image: circleci/openjdk:8-jdk
-
+      - image: gradle:alphine
 
     steps:
       - checkout
