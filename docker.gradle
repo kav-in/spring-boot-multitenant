@@ -1,0 +1,12 @@
+
+apply plugin: "com.palantir.docker"
+
+docker {
+    name "asia.gcr.io/heroic-bonbon-212606/${jar.baseName}"
+    tags 'latest'
+    files jar
+    pull true
+    buildArgs(['JAR_FILE': "${jar.archiveName}"])
+}
+
+docker.dependsOn(bootJar)
