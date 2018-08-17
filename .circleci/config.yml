@@ -33,14 +33,14 @@ jobs:
   push_to_gcp:
     docker:
       - image: google/cloud-sdk
-      - image: gradle/alpine 
+
     steps:
       - checkout
 
       - setup_remote_docker:
           version: 17.05.0-ce
 
-      - run: gradle buildDocker -xtest
+      - run: ./gradlew buildDocker -xtest
 
       - run: 
           name: Setup Google Cloud SDK
