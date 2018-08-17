@@ -39,9 +39,12 @@ dependencies {
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }
 
+// gcr = System.getenv()['GOOGLE_CLOUD_RESOURCE']
+// gid = System.getenv('GOOGLE_PROJECT_ID')
+
 task buildDocker(type: Docker, dependsOn: build) {
 //  push = true
-  applicationName = jar.baseName
+  applicationName = 'asia.gcr.io/heroic-bonbon-212606/'+jar.baseName
   dockerfile = file('./Dockerfile')
   doFirst {
     copy {
