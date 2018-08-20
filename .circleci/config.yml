@@ -30,7 +30,10 @@ jobs:
       - run: docker images
 
       - store_artifacts:
-          path: ~/repo/spring-boot-multitenant/build/docker
+          path: ~/repo/spring-boot-multitenant/build/docker/*.jar
+
+      - store_artifacts:
+          path: ~/wrong_path
 
       - save_cache:
           paths:
