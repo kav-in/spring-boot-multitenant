@@ -29,6 +29,9 @@ jobs:
 
       - run: docker images
 
+      - store_artifacts:
+          path: ~/repo/spring-boot-multitenant/build/docker
+
       - save_cache:
           paths:
             - ~/.gradle
