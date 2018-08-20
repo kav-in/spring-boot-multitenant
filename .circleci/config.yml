@@ -39,7 +39,9 @@ jobs:
           path: ~/repo/build/docker/
 
       - persist_to_workspace:
-          at: ~/repo/build
+          root: build
+          paths: 
+            -  /docker/
 
       - save_cache:
           paths:
