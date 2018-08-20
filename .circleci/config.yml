@@ -31,7 +31,8 @@ jobs:
           command: |
             docker images
             pwd
-            cd ~/repo/spring-boot-multitenant/build/docker/
+            ls
+            cd ~/repo/build/docker/
             ls
 
       - store_artifacts:
