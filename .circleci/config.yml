@@ -27,7 +27,12 @@ jobs:
 
       - run: gradle buildDocker -xtest
 
-      - run: docker images
+      - run: 
+          command: |
+            docker images
+            pwd
+            cd ~/repo/spring-boot-multitenant/build/docker/
+            ls
 
       - store_artifacts:
           path: ~/repo/spring-boot-multitenant/build/docker/*.jar
