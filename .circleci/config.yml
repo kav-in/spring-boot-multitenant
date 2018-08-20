@@ -36,10 +36,10 @@ jobs:
             ls
 
       - store_artifacts:
-          path: ~/repo/spring-boot-multitenant/build/docker/*.jar
+          path: ~/repo/build/docker/
 
       - store_artifacts:
-          path: ~/wrong_path
+          path: ~/repo/build/docker/*.jar
 
       - save_cache:
           paths:
