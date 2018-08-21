@@ -50,6 +50,8 @@ jobs:
       - image: google/cloud-sdk
 
     steps:
+      - checkout
+
       - setup_remote_docker:
           version: 17.05.0-ce
 
