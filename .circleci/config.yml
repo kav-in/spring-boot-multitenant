@@ -85,7 +85,7 @@ jobs:
             ls
             cd ..
             pwd
-            kubectl apply -f ~/repo/kubernet/kubernet_deployemnt.yaml
+            kubectl apply -f ~/repo/kubernet/kubernet_deployment.yaml
             kubectl rollout status deployment/${PROJECT_NAME}
 workflows:
   version: 2
