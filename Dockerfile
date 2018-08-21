@@ -37,6 +37,6 @@ RUN \
 
 ARG JAR_FILE
 
-ADD ${JAR_FILE} /opt/app.jar
+ADD spring-boot-multitenant-0.0.1-SNAPSHOT.jar /opt/app.jar
 
 ENTRYPOINT exec java -Djava.security.egd=file:/dev/./urandom $JAVA_OPTS -jar /opt/app.jar
