@@ -48,6 +48,8 @@ jobs:
   push_to_gcp:
     docker:
       - image: google/cloud-sdk
+   
+    working_directory: ~/repo
 
     steps:
       - checkout
