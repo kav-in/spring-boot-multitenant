@@ -76,7 +76,12 @@ jobs:
       - run:
           name: Deploy to Kubernetes
           command: |
-            kubectl apply -f kubernet/kubernet_deployemnt.yml
+            pwd
+            cd kubernet
+            ls
+            cd ..
+            pwd
+            kubectl apply -f ~/repo/kubernet/kubernet_deployemnt.yaml
             kubectl rollout status deployment/${PROJECT_NAME}
 workflows:
   version: 2
