@@ -73,6 +73,11 @@ jobs:
             gcloud auth configure-docker
             docker images
             docker push $GOOGLE_CLOUD_RESOURCE/$GOOGLE_PROJECT_ID/$PROJECT_NAME:latest
+      - run:
+          name: Deploy to Kubernetes
+          command: |
+            kubectl apply -f kubernet/kubernet_deployemnt.yml
+            kubectl rollout status deployment/${PROJECT_NAME}
 workflows:
   version: 2
   build_test_deploy:
